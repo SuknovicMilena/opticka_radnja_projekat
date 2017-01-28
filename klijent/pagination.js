@@ -3,7 +3,10 @@ var kontakt = "Kontakt";
 var anketa = "Anketa";
 var korisniLinkovi = "Korisni linkovi";
 var search = "Pronadji jos neku radnju";
-var grafikoni = "Grafikoni"
+var grafikoni = "Grafikoni";
+var pretraga_slika="Pretraga slika";
+var uslovi_kupovine= "Uslovi kupovine";
+
 
 var current_page = 1;
 var records_per_page = 2;
@@ -15,10 +18,9 @@ var objJson = [
     { adName: result = korisniLinkovi.link("/korisniLinkovi.html") },
     { adName: result = search.link("/search.html") },
     { adName: result = grafikoni.link("/grafikoni.html") },
-    { adName: "AdName 7" },
-    { adName: "AdName 8" },
-    { adName: "AdName 9" },
-    { adName: "AdName 10" }
+    { adName: result = grafikoni.link("/grafikoni.html") },
+     { adName: result = uslovi_kupovine.link("/usloviKupovine.html") },
+    { adName: result = pretraga_slika.link("/restgalerija.php") }
 ]; // Can be obtained from another source, such as your objJson variable
 
 function prevPage() {

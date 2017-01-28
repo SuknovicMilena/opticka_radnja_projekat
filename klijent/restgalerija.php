@@ -1,9 +1,12 @@
 <head>
-<link rel="stylesheet" type="text/css" href="stilindex.css" />
-<title> Flickr Galerija</title>		
-<link rel="shortcut icon" href="bmw.ico">
+
+<link rel="stylesheet" href="site.css">
+<title> Pretraga slika</title>		
+
 </head>
-<body id="bodygalerija" background="images/izbeljenakontakt.jpg">
+<body>
+
+    <a href="index.html">Početna strana</a>
 
 <form id="aa" method="GET" action=""> 
 Unesite kljucnu rec za pretragu: <input type = "text" name = "tag"/><br/>
