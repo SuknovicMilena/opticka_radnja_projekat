@@ -1,0 +1,88 @@
+body {
+	font-family: Verdana;
+	background-size: cover;
+	background-image: url('img/drvo.jpg');
+}
+
+table {
+	border-collapse: collapse;
+	width: 50%;
+}
+
+table {
+	border: 1px solid black;
+}
+
+div.forma-holder, div.proizvodi-holder, div.proizvodjaci-holder,div.forma-holderSunce,
+div.proizvodi-holderSunce,div.forma-holder-proizvodjaci,div.forma-holder-kontaktnasociva, 
+div.proizvodi-holder-kontaktnasociva{
+	display: none;
+}
+
+.save-edit, .cancel-edit, 
+.save-edit-sunce, .cancel-edit-sunce,
+.save-edit-proizvodjac, .cancel-edit-proizvodjac,
+#dodaj-naocare, #otkazi-naocare,
+#dodaj-naocareSunce, #otkazi-naocareSunce,#dodaj-proizvodjaca,#otkazi-proizvodjaca,
+#dodaj-sociva, #otkazi-sociva
+
+ {
+	display: none;
+}
+
+div.slajder {
+    height: 455px;
+	width: 100%;
+    position:relative;
+    background-size: cover;
+    background-position: center;
+}
+div.Brojacposeta{
+ position:  relative;
+   bottom: 20px;
+   left: 20px;
+    font-size: 16px;
+
+}
+#listingTable {
+   position: inherit;
+   bottom: 2px;
+   left: 16px;
+    font-size: 16px;
+
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: white;
+}
+
+a {
+      color: #000; 
+      text-decoration: none;
+	  }
+h1 {
+      padding: 60px 0;
+       text-align: center;
+	   }
+		  

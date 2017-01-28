@@ -1,0 +1,155 @@
+<html>
+
+<head>
+       <link rel="stylesheet" href="site.css">
+
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC8kDkW5AknjCsRNwEsakgUQbRoskCKT3g&sensor=false"></script>
+    <script>
+        function initialize() {
+            var mapProp = {
+                center: new google.maps.LatLng(44.772368, 20.416554),
+                zoom: 16,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+<script>
+        //############### Create Marker Function ##############
+        function create_marker(MapPos, MapTitle, MapDesc, InfoOpenDefault, DragAble, Removable, iconPath) {
+            //new marker
+            var marker = new google.maps.Marker({
+                position: MapPos,
+                map: map,
+                draggable: DragAble,
+                animation: google.maps.Animation.DROP,
+                title: "Lokacija 1",
+                icon: iconPath
+            });
+
+            //Content structure of info Window for the Markers
+            var contentString = $('<div class="marker-info-win">' +
+                '<div class="marker-inner-win"><span class="info-content">' +
+                '<h1 class="marker-heading">' + MapTitle + '</h1>' +
+                MapDesc +
+                '</span><button name="remove-marker" class="remove-marker" title="Remove Marker">Remove Marker</button>' +
+                '</div></div>');
+
+
+            //Create an infoWindow
+            var infowindow = new google.maps.InfoWindow();
+            //set the content of infoWindow
+            infowindow.setContent(contentString[0]);
+
+            //Find remove button in infoWindow
+            var removeBtn = contentString.find('button.remove-marker')[0];
+
+            //Find save button in infoWindow
+            var saveBtn = contentString.find('button.save-marker')[0];
+
+            //add click listner to remove marker button
+            google.maps.event.addDomListener(removeBtn, "click", function (event) {
+                //call remove_marker function to remove the marker from the map
+                remove_marker(marker);
+            });
+
+            if (typeof saveBtn !== 'undefined') //continue only when save button is present
+            {
+                //add click listner to save marker button
+                google.maps.event.addDomListener(saveBtn, "click", function (event) {
+                    var mReplace = contentString.find('span.info-content'); //html to be replaced after success
+                    var mName = contentString.find('input.save-name')[0].value; //name input field value
+                    var mDesc = contentString.find('textarea.save-desc')[0].value; //description input field value
+                    var mType = contentString.find('select.save-type')[0].value; //type of marker
+
+                    if (mName == '' || mDesc == '') {
+                        alert("Please enter Name and Description!");
+                    } else {
+                        //call save_marker function and save the marker details
+                        save_marker(marker, mName, mDesc, mType, mReplace);
+                    }
+                });
+            }
+
+            //add click listner to save marker button        
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.open(map, marker); // click on marker opens info window 
+            });
+
+            if (InfoOpenDefault) //whether info window should be open by default
+            {
+                infowindow.open(map, marker);
+            }
+        }
+
+        create_marker("44.772368, 20.416554", "Lokacija", "Blagoja Parovica 11", false, false, false, "http://labs.google.com/ridefinder/images/mm_20_blue.png");
+
+</script>
+
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://dimplejs.org/dist/dimple.v1.1.2.min.js"></script>
+
+<meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'>
+<!--Učitava se API biblioteka za Google Charts-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!--Učitava se JQuery biblioteka-->
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+
+<script type="text/javascript">  
+        // Učitava se API za vizuelizaciju
+        google.load('visualization', '1', { 'packages': ['corechart'] });
+        // Šalje povratni poziv kada se učita API
+        google.setOnLoadCallback(drawChart);
+        // Funkcija šalje asinhrono JSON podatke, koje PHP fajl podaci.php generiše iz baze
+        function drawChart() {
+            var jsonData = $.ajax({
+                url: "podaci.php",
+                dataType: "json",
+                async: false
+            }).responseText;
+            // Kreira se tabela sa podacima na osnovu poslatih JSON podataka
+            var data = new google.visualization.DataTable(jsonData);
+            // Instancira se grafikon (Column Chart je grafikon sa vertikalnim linijama) i prosleđuju mu se parametri, uključujući i ID div-a gde će
+            // grafikon biti prikazan
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            chart.draw(data, { width: 600, height: 400 });
+        }
+</script>
+
+
+
+<meta http-equiv="Content-Language" content="sr" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title> Grafikoni-Vizuelizacija </title>
+<link rel="stylesheet" type="text/css" href="stilindex.css" />
+<link rel="shortcut icon" href="bmw.ico">
+</head>
+
+<body id="body" background="images/izbeljenakontakt.jpg">
+<a href="index.html">Početna strana</a>
+    <center>
+        <h3>Broj zaposlenih i raspolozivih automobila u nasim filijalama</h3>
+                <script type="text/javascript">
+                    var svg = dimple.newSvg("body", 600, 400);
+                    var data = [
+                        { "Pol": "Muskarci", "Broj zaposlenih": 9 },
+                        { "Pol": "Zene", "Broj zaposlenih": 6 }
+                    ];
+                    var chart = new dimple.chart(svg, data);
+                    chart.addCategoryAxis("y", "Pol");
+                    chart.addMeasureAxis("x", "Broj zaposlenih");
+                    chart.addSeries(null, dimple.plot.bar);
+                    chart.draw();
+                </script>
+
+
+<div id="chart_div"></div>
+
+    <h3>Nasa lokacija</h3>
+        <div id="googleMap" style="width:500px;height:380px;"></div>
+</body>
+
+</html>

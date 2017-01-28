@@ -1,0 +1,84 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="site.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ 
+    <title>Anketa</title>
+
+	<script type="text/javascript">
+
+	function validacija() {
+
+		if (document.forms[0].ime.value == '') {
+			alert("Niste uneli Vaše ime!");
+			document.forms[0].ime.focus();
+			return false
+		}
+		if (document.forms[0].prezime.value == '') {
+			alert("Niste uneli Vaše prezime!");
+			document.forms[0].prezime.focus();
+			return false;
+		}
+		if (document.forms[0].mail.value == '') {
+			alert("Niste uneli e-mail adresu!");
+			document.forms[0].mail.focus();
+			return false;
+		}
+		if (document.forms[0].mail.value.indexOf('@') == -1) {
+			alert("Niste uneli e-mail adresu u odgovarajućem formatu!");
+			document.forms[0].mail.focus();
+			return false;
+		}
+
+
+
+		return confirm("Ispravno ste uneli sve podatke, da li želite da nastavite?");
+	}
+
+</script>
+
+	</head>
+
+	<body> 
+	<form onsubmit="return validacija()">
+		
+	<p><b><font size=10>Hvala sto učestvujete u anketi!</font></b></p>
+
+	<br>
+	<b>Unesite ime i prezime:</b>
+	<br>
+	<br>
+	<b>Ime</b>
+<input type="text" id="ime">
+	<br>
+	<b>Prezime</b>
+	<input type="text" id="prezime">
+	<br>
+	<br>
+	
+
+	<br>
+
+	<b>Unesite e-mail adresu:</b>
+	<br>
+	<input type="text" name="mail" id="email">
+	<br>
+	<br>
+	<b>Kritike/Saveti= Sta vam se dopalo kod izgleda nase prodavnice?</b>
+	<br>
+	<textarea name="area" id="kritike-saveti" rows="10" cols="30">
+
+	</textarea>
+	<br>
+	<br>
+	<INPUT type="submit" value="Potvrdi" id="anketapotvrdi">
+	<INPUT type="reset" value="Obriši podatke" id="anketareset">
+
+	</form>
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="anketa.js"></script
+	</body>
+
+	</html>

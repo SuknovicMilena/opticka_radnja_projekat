@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>Saveti</title>
+    <link rel="stylesheet" href="site.css">
+    <script>
+        var novikuki = document.cookie;
+        var delovikukija = novikuki.split("=");
+        var imekukija = delovikukija[0];
+        var vrednostkukija = unescape(delovikukija[1]);
+        var prethodnavrednost = vrednostkukija;
+        if (imekukija != "brojac" || vrednostkukija == null) {
+            prethodnavrednost = 0;
+        }
+        var novavrednost = parseInt(prethodnavrednost) + 1;
+        var newDate = new Date();
+        newDate.setTime(newDate.getTime() + 2592000000);
+        document.cookie = " brojac=" + novavrednost + ";expires=" +
+            newDate.toGMTString();
+
+        function showTip(oEvent) {
+            var oDiv = document.getElementById("toolTipComponent");
+            oDiv.style.visibility = "visible";
+            oDiv.style.left = oEvent.clientX + 5;
+            oDiv.style.top = oEvent.clientY + 5;
+        }
+
+        function hideTip(oEvent) {
+            var oDiv = document.getElementById("toolTipComponent");
+            oDiv.style.visibility = "hidden";
+
+        }
+        function showTip1(oEvent) {
+            var oDiv = document.getElementById("toolTipComponent1");
+            oDiv.style.visibility = "visible";
+            oDiv.style.left = oEvent.clientX + 5;
+            oDiv.style.top = oEvent.clientY + 5;
+        }
+
+        function hideTip1(oEvent) {
+            var oDiv = document.getElementById("toolTipComponent1");
+            oDiv.style.visibility = "hidden";
+
+        }
+    </script>
+</head>
+
+<body>
+    <a href="index.html">Početna strana</a>
+    <P>Korisni linkovi</p>
+  
+    <br>
+    <br>
+
+<a href="http://www.naocareonline.com/index.php/informacije/opste-informacije/saveti-kako-izabrati-naocare" onmouseover="showTip(event)" onmouseout="hideTip(event)" position="">Kako izabrati naocare</a>
+
+<div id="toolTipComponent" style="background-color: gray; position: absolute; visibility: hidden; padding: 5px">
+<span style="font-weight: bold">Naocare</span><br/> U zadnjih nekoliko godina sunčane naočare su postale veoma važan detalj ženske i muške mode. Sunčane
+naočare možemo da kupimo u raznim oblicima i veličinama, ali treba obratiti pažnju kada dodje vreme da izaberemo svoje nove
+naočare, koji oblik odgovara najviše crtama našeg lica. Informisi se sta tebi odgovara! :)
+</div>
+
+
+
+<a href="http://arhiva.superzena.net/lepota.php?yyyy=2013&mm=09&nav_id=759532" onmouseover="showTip1(event)" onmouseout="hideTip1(event)">Sminkanje + naocare</a>
+
+<div id="toolTipComponent1" style="background-color: gray; position: absolute; visibility: hidden; padding: 5px">
+<span style="font-weight: bold">Naocare</span><br/> Odgovarajuća šminka uz naočare može učiniti da izgledate prelepo. Samo treba da znate prave trikove,
+boje i količinu šminke koju treba da nanesete.
+</div>
+
+
+
+
+
+  <P class="Brojacposeta">
+      <label> Brojac poseta </label>
+  <script language="JavaScript">
+        document.write("Ovu stranicu ste posetili " + novavrednost + " puta.");
+    </script>
+
+  </p>
+</body>
+
+</html>

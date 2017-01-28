@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="site.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#btnPrint").live("click", function () {
+            var divContents = $("#dvContainer").html();
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head><title>DIV Contents</title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        });
+    </script>
+</head>
+<body>
+    <a href="index.html">Početna strana</a>
+    <form id="form1">
+    <div id="dvContainer">
+        USLOVI KUPOVINE I ISPORUKE
+<br>
+<br>
+<br>
+Dobrodošli na sajt www.diopta.rs .
+<br>
+<br>
+DIOPTA Vam omogućava korišćenje usluga i sadržaja svog portala koje je podložno niže navedenim Uslovima kupovine.
+<br>
+PODACI O TRGOVCU
+<br>
+<br>
+<br>
+Diopta d.o.o
+<br>
+<br>
+13.oktobra 13
+11260 Umka
+Šifra delatnosti: 4778 (Ostala trgovina na malo novim proizvodima u specijalizovanim prodavnicama)
+PIB: 106908922
+TR: 168-348076-53
+<br>
+POMOĆ PRI ON LINE KUPOVINI  
+Naručivanje putem sajta DIOPTA– optičarske radnje je veoma jednostavno. Kao i u klasičnim maloprodajnim objektima, potrebno je na sajtu da pronađete artikal koji želite da naručite.
+Porudžbina putem sajta je moguća za sve navedene modele na sajtu klikom na dugme „DODATI U KORPU“ nakon čega dobijate uvid u Vašu korpu sa ukupnim iznosom Vašeg računa.
+<br>
+<br>
+Odabir načina plaćanja
+– Plaćanje kupljenih artikala je moguće gotovinski prilikom preuzimanja
+– Narudžbinu možete platiti putem Interneta platnim karticama Visa, Visa Electron, MasterCard ili Maestro koje podržavaju plaćanje preko Interneta.
+<br>
+<br>
+Plaćanje u maloprodajnim objektima je moguće na sledeće načine:
+<br>
+<br>
+gotovinom
+čekovima građana
+platnim karticama
+administrativnom zabranom
+Ukoliko se odlučite za kupovinu čekovima građana, možete platiti na 5 mesečnih rata. Prva rata se realizuje odmah nakon kupovine a naredni čekovi u razmaku od 30 dana.
+<br>
+Vlasnicima platnih kartica banke Intesa omogućena je kupovina na 6 mesečnih rata.
+<br>
+Penzionerima omogućena kupovina na 5 mesečnih rata putem administrativne zabrane sa PIO fondom.
+<br>
+Ukoliko firma u kojoj radite ima potpisan ugovor o Administrativnoj zabrani sa nama, možete kupovati na 5 mesečnih rata. Sve u vezi ugovora možete proveriti putem telefona 011 3538 870
+      
+<br>
+
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <input type="button" value="Odstavmpaj uslove kupovine "  id="btnPrint" />
+    </form>
+</body>
+</html>

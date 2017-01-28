@@ -1,0 +1,143 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="site.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+
+
+    <ul>
+        <li><a href="index.html">Početna strana</a></li>
+        <li><a href="javascript:;" id="logout">Logout</a></li>
+
+
+
+    </ul>
+
+
+    <select id="proizvod-tip">
+        <option selected disabled>--Izaberi Tip--</option>
+        <option value="NaocareZaSunce">Naocare za sunce</option>
+        <option value="NaocareZaVid">Naocare za vid</option>
+         <option value="KontaktnaSociva">Kontaktna sociva</option>
+        <option value="Proizvodjac">Proizvodjac</option>
+    </select>
+
+    <h3> Proizvodi</h3>
+    <div class="proizvodi-holder-kontaktnasociva">
+        <table id="proizvodiSociva">
+            <thead>
+                <th>Id</th>
+                <th>Ime</th>
+                <th>Proizvodjac</th>
+                <th class="admin-only">Akcije</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="proizvodi-holder">
+        <table id="proizvodi">
+            <thead>
+                <th>Id</th>
+                <th>Ime</th>
+                <th>Proizvodjac</th>
+                <th class="admin-only">Akcije</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="proizvodi-holderSunce">
+        <table id="proizvodiSunce">
+            <thead>
+                <th>Id</th>
+                <th>Ime</th>
+                <th>Proizvodjac</th>
+                <th class="admin-only">Akcije</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="proizvodjaci-holder">
+        <table id="proizvodjaci" class="tablesorter">
+            <thead>
+                <th>Id</th>
+                <th>Ime</th>
+                <th class="admin-only">Akcije</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="admin-only">
+        <button id="dodaj-sociva">Dodaj nova sociva</button>
+        <button id="otkazi-sociva">Otkazi</button>
+    </div>
+
+    <div class="admin-only">
+        <button id="dodaj-naocare">Dodaj nove naocare</button>
+        <button id="otkazi-naocare">Otkazi</button>
+    </div>
+
+    <div class="admin-only">
+        <button id="dodaj-proizvodjaca">Dodaj novog proizvodjača</button>
+        <button id="otkazi-proizvodjaca">Otkazi</button>
+    </div>
+
+
+    <div class="forma-holder-proizvodjaci">
+        <label>Ime:</label>
+        <input type="text" name="ime" id="imeProizvodjac" />
+        <button id="sacuvajProizvodjaca">Sacuvaj</button>
+    </div>
+
+    <div class="forma-holder">
+        <label>Ime:</label>
+        <input type="text" name="ime" id="ime" />
+        <label>Proizvodjac:</label>
+        <select id="proizvodjac"></select>
+        <button id="sacuvaj">Sacuvaj</button>
+    </div>
+
+    <div class="forma-holder-kontaktnasociva">
+        <label>Ime:</label>
+        <input type="text" name="ime" id="imeSociva" />
+        <label>Proizvodjac:</label>
+        <select id="proizvodjacSociva"></select>
+        <button id="sacuvajSociva">Sacuvaj</button>
+    </div>
+
+    <div>
+        <button id="dodaj-naocareSunce">Dodaj nove naocare</button>
+        <button id="otkazi-naocareSunce">Otkazi</button>
+    </div>
+
+    <div class="forma-holderSunce">
+        <label>Ime:</label>
+        <input type="text" name="ime" id="imeSunce" />
+        <label>Proizvodjac:</label>
+        <select id="proizvodjacSunce"></select>
+        <button id="sacuvajSunce">Sacuvaj</button>
+    </div>
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="izaberiProizvod.js"></script>
+    <script src="pagination.js"></script>
+
+    <div class="slajder">
+    </div>
+
+</body>
+
+</html>

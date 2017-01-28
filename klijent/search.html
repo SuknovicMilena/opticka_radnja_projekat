@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="site.css">
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"
+  />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+  <script>
+
+    var source = [{
+      value: "https://www.oculus.com/",
+      label: "Okulus"
+    },
+    {
+      value: "http://diopta.rs/",
+      label: "Diopta"
+
+    },
+    {
+      value: "http://www.lensoptic.com/",
+      label: "Lensoptic"
+
+    }
+    ];
+
+    $(document).ready(function () {
+      $("input#autocomplete").autocomplete({
+        source: source,
+        select: function (event, ui) {
+          window.location.href = ui.item.value;
+        }
+      });
+    });
+
+  </script>
+
+</head>
+<a href="index.html">Početna strana</a>
+<body style="font-size:62.5%;">
+
+<input id="autocomplete" />
+
+</body>
+
+</html>

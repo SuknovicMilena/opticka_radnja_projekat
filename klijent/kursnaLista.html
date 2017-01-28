@@ -1,0 +1,53 @@
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="site.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+
+
+    <ul>
+        <li><a href="index.html">Početna strana</a></li>
+        <li><a href="javascript:;" id="logout">Logout</a></li>
+
+
+
+    </ul>
+
+
+
+
+    <div class="kursna-lista-holder">
+        <h3>Kursna lista za dan: <span id="dan"></span></h3> <a href="kalkulator.html">Kalkulator</a>
+        <div>Valuta: <select id="valute"></select></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Kupovni</th>
+                    <th>Srednji</th>
+                    <th>Prodajni</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="kupovni"></td>
+                    <td id="srednji"></td>
+                    <td id="prodajni"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="izaberiProizvod.js"></script>
+    <script src="pagination.js"></script>
+
+    <div class="slajder">
+    </div>
+
+</body>
+
+</html>

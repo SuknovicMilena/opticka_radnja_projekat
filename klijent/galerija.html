@@ -1,0 +1,61 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+  <style>
+.wrap {margin: 60px auto; text-align: center;
+}
+.img-zoom {
+			width:310px;
+			-webkit-transition: all .2s ease-in-out;
+			-moz-transition: all .2s ease-in-out;
+			-o-transition: all .2s ease-in-out;
+			-ms-transition: all .2s ease-in-out;
+		}
+ .transition {
+			-webkit-transform: scale(2); 
+			-moz-transform: scale(2);
+			-o-transform: scale(2);
+			transform: scale(2);
+		}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+  <ul>
+    <li><a href="index.html">Početna strana</a></li>
+
+  </ul>
+
+
+  <div class="wrap">
+    <img class="img-zoom" src="img/fendi.jpg">
+  </div>
+  <div class="wrap">
+    <img class="img-zoom" src="img/naocare2.jpg">
+  </div>
+  <div class="wrap">
+    <img class="img-zoom" src="img/fendi.jpg">
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('.img-zoom').hover(function () {
+        $(this).addClass('transition');
+      }, function () {
+        $(this).removeClass('transition');
+      });
+    });
+  </script>
+
+</body>
+
+</html>
